@@ -9,9 +9,26 @@
 </head>
 <body>
 	<script type="text/javascript">
+
+
 		// this is all cards in a deck
 		var deck = {
-			one: ["diamonds", "hearts", "clubs", "spades"],
+			two: ["diamonds", "hearts", "clubs", "spades"],
+			three: ["diamonds", "hearts", "clubs", "spades"],
+			four: ["diamonds", "hearts", "clubs", "spades"],
+			five: ["diamonds", "hearts", "clubs", "spades"],
+			six: ["diamonds", "hearts", "clubs", "spades"],
+			seven: ["diamonds", "hearts", "clubs", "spades"],
+			eight: ["diamonds", "hearts", "clubs", "spades"],
+			nine: ["diamonds", "hearts", "clubs", "spades"],
+			ten: ["diamonds", "hearts", "clubs", "spades"],
+			jack: ["diamonds", "hearts", "clubs", "spades"],
+			queen: ["diamonds", "hearts", "clubs", "spades"],
+			king: ["diamonds", "hearts", "clubs", "spades"],
+			ace: ["diamonds", "hearts", "clubs", "spades"],
+		}
+		// this is where i pull from
+		var workDeck = {
 			two: ["diamonds", "hearts", "clubs", "spades"],
 			three: ["diamonds", "hearts", "clubs", "spades"],
 			four: ["diamonds", "hearts", "clubs", "spades"],
@@ -27,15 +44,83 @@
 			ace: ["diamonds", "hearts", "clubs", "spades"],
 		}
 
+		//this is where I pass it too
+		var discard = {
+
+		}
+
+		//random number generator
+		function randomNumber(min, max) {
+			return Math.floor(Math.random() * (max - min)) + min;
+		},
+
 		// This currently displays key value pairs  want to get it so it shuffles the deck
-		function shuffle() {
+		function randCard() {
+
+		}
+
+		function displayCards() {
 			for (i in deck) {
 				console.log(i, deck[i])
 			}
 		}
 
 		var blackjack = {
-			
+			// this is all cards in a deck
+			deck : {
+				two: ["diamonds", "hearts", "clubs", "spades"],
+				three: ["diamonds", "hearts", "clubs", "spades"],
+				four: ["diamonds", "hearts", "clubs", "spades"],
+				five: ["diamonds", "hearts", "clubs", "spades"],
+				six: ["diamonds", "hearts", "clubs", "spades"],
+				seven: ["diamonds", "hearts", "clubs", "spades"],
+				eight: ["diamonds", "hearts", "clubs", "spades"],
+				nine: ["diamonds", "hearts", "clubs", "spades"],
+				ten: ["diamonds", "hearts", "clubs", "spades"],
+				jack: ["diamonds", "hearts", "clubs", "spades"],
+				queen: ["diamonds", "hearts", "clubs", "spades"],
+				king: ["diamonds", "hearts", "clubs", "spades"],
+				ace: ["diamonds", "hearts", "clubs", "spades"],
+			}
+			// this is where i pull from
+			workDeck : {
+				two: ["diamonds", "hearts", "clubs", "spades"],
+				three: ["diamonds", "hearts", "clubs", "spades"],
+				four: ["diamonds", "hearts", "clubs", "spades"],
+				five: ["diamonds", "hearts", "clubs", "spades"],
+				six: ["diamonds", "hearts", "clubs", "spades"],
+				seven: ["diamonds", "hearts", "clubs", "spades"],
+				eight: ["diamonds", "hearts", "clubs", "spades"],
+				nine: ["diamonds", "hearts", "clubs", "spades"],
+				ten: ["diamonds", "hearts", "clubs", "spades"],
+				jack: ["diamonds", "hearts", "clubs", "spades"],
+				queen: ["diamonds", "hearts", "clubs", "spades"],
+				king: ["diamonds", "hearts", "clubs", "spades"],
+				ace: ["diamonds", "hearts", "clubs", "spades"],
+			}
+
+			//this is where I pass it too
+			discard : {
+
+			}
+			//random number generator
+			randomNumber: function(min, max) {
+				return Math.floor(Math.random() * (max - min)) + min;
+			},
+
+			draw:function() {
+				// take random card, put in discard, remove from workdeck
+			}
+
+			randCard: function() {
+
+			}
+
+			displayCards : function() {
+				for (i in deck) {
+					console.log(i, deck[i])
+				}
+			}
 		}
 	</script>
 </body>
