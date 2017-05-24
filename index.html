@@ -26,7 +26,7 @@
 				queen: ["diamonds", "hearts", "clubs", "spades"],
 				king: ["diamonds", "hearts", "clubs", "spades"],
 				ace: ["diamonds", "hearts", "clubs", "spades"],
-			}
+			},
 			// this is where i pull from
 			workDeck : {
 				two: ["diamonds", "hearts", "clubs", "spades"],
@@ -42,31 +42,47 @@
 				queen: ["diamonds", "hearts", "clubs", "spades"],
 				king: ["diamonds", "hearts", "clubs", "spades"],
 				ace: ["diamonds", "hearts", "clubs", "spades"],
-			}
+			},
 
 			//this is where I pass it too
 			discard : {
 
-			}
+			},
 			//random number generator
 			randomNumber: function(min, max) {
 				return Math.floor(Math.random() * (max - min)) + min;
 			},
 
 			draw:function() {
-				// take random card, put in discard, remove from workdeck
-			}
+				// take random card
+				var stash = blackjack.randomNumber(0, Object.keys(blackjack.workDeck).length - 1);
+				// console.log(stash)
+				//chooses the number
+				var numKey = blackjack.workDeck[Object.keys(blackjack.workDeck)[stash]];
+				//grab a suit
+				console.log(blackjack.discard.numKey);
+				blackjack.discard.numKey = numKey[blackjack.randomNumber(0,3)];
+				//put in discard, remove from workdeck
+			},
+
 
 			randCard: function() {
-
-			}
+				
+			},
 
 			displayCards : function() {
 				for (i in deck) {
 					console.log(i, deck[i])
 				}
-			}
+			},
 		}
+
+	// // var key = "happyCount";
+	// // myArray.push( { key : someValueArray } );
+	// var key = "happyCount";
+	// var obj = {};
+	// obj[key] = someValueArray;
+	// myArray.push(obj);
 
 	// // this is all cards in a deck
 	// var deck = {
