@@ -10,72 +10,123 @@
 <body>
 	<script type="text/javascript">
 
-		var blackjack = {
-			// this is all cards in a deck
-			deck : {
-				two: ["diamonds", "hearts", "clubs", "spades"],
-				three: ["diamonds", "hearts", "clubs", "spades"],
-				four: ["diamonds", "hearts", "clubs", "spades"],
-				five: ["diamonds", "hearts", "clubs", "spades"],
-				six: ["diamonds", "hearts", "clubs", "spades"],
-				seven: ["diamonds", "hearts", "clubs", "spades"],
-				eight: ["diamonds", "hearts", "clubs", "spades"],
-				nine: ["diamonds", "hearts", "clubs", "spades"],
-				ten: ["diamonds", "hearts", "clubs", "spades"],
-				jack: ["diamonds", "hearts", "clubs", "spades"],
-				queen: ["diamonds", "hearts", "clubs", "spades"],
-				king: ["diamonds", "hearts", "clubs", "spades"],
-				ace: ["diamonds", "hearts", "clubs", "spades"],
-			},
-			// this is where i pull from
-			workDeck : {
-				two: ["diamonds", "hearts", "clubs", "spades"],
-				three: ["diamonds", "hearts", "clubs", "spades"],
-				four: ["diamonds", "hearts", "clubs", "spades"],
-				five: ["diamonds", "hearts", "clubs", "spades"],
-				six: ["diamonds", "hearts", "clubs", "spades"],
-				seven: ["diamonds", "hearts", "clubs", "spades"],
-				eight: ["diamonds", "hearts", "clubs", "spades"],
-				nine: ["diamonds", "hearts", "clubs", "spades"],
-				ten: ["diamonds", "hearts", "clubs", "spades"],
-				jack: ["diamonds", "hearts", "clubs", "spades"],
-				queen: ["diamonds", "hearts", "clubs", "spades"],
-				king: ["diamonds", "hearts", "clubs", "spades"],
-				ace: ["diamonds", "hearts", "clubs", "spades"],
-			},
-
-			//this is where I pass it too
-			discard : {
-
-			},
-			//random number generator
-			randomNumber: function(min, max) {
-				return Math.floor(Math.random() * (max - min)) + min;
-			},
-
-			draw:function() {
-				// take random card
-				var stash = blackjack.randomNumber(0, Object.keys(blackjack.workDeck).length - 1);
-				// console.log(stash)
-				//chooses the number
-				var numKey = blackjack.workDeck[Object.keys(blackjack.workDeck)[stash]];
-				//grab a suit
-				console.log(blackjack.discard.numKey);
-				blackjack.discard.numKey = numKey[blackjack.randomNumber(0,3)];
-				//put in discard, remove from workdeck
-			},
+		// var blackjack = {
+		// 	// this is all cards in a deck
+		// 	deck : {
+		// 		two: ["diamonds", "hearts", "clubs", "spades"],
+		// 		three: ["diamonds", "hearts", "clubs", "spades"],
+		// 		four: ["diamonds", "hearts", "clubs", "spades"],
+		// 		five: ["diamonds", "hearts", "clubs", "spades"],
+		// 		six: ["diamonds", "hearts", "clubs", "spades"],
+		// 		seven: ["diamonds", "hearts", "clubs", "spades"],
+		// 		eight: ["diamonds", "hearts", "clubs", "spades"],
+		// 		nine: ["diamonds", "hearts", "clubs", "spades"],
+		// 		ten: ["diamonds", "hearts", "clubs", "spades"],
+		// 		jack: ["diamonds", "hearts", "clubs", "spades"],
+		// 		queen: ["diamonds", "hearts", "clubs", "spades"],
+		// 		king: ["diamonds", "hearts", "clubs", "spades"],
+		// 		ace: ["diamonds", "hearts", "clubs", "spades"],
+		// 	},
 
 
-			randCard: function() {
-				
-			},
 
-			displayCards : function() {
-				for (i in deck) {
-					console.log(i, deck[i])
-				}
-			},
-		}
+		// 	// this is where i pull from
+		// 		// 	workDeck : {
+		// 		// 		two: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 		three: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 		four: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 		five: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 		six: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 		seven: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 		eight: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 		nine: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 		ten: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 		jack: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 		queen: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 		king: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 		ace: ["diamonds", "hearts", "clubs", "spades"],
+		// 		// 	},
+
+		// 		// 	//this is where I pass it too
+		// 		// 	discard : {
+
+		// 		// 	},
+		// 		// 	//random number generator
+		// 		// 	randomNumber: function(min, max) {
+		// 		// 		return Math.floor(Math.random() * (max - min)) + min;
+		// 		// 	},
+
+		// 		// 	draw:function() {
+		// 		// 		// take random card
+		// 		// 		var stash = blackjack.randomNumber(0, Object.keys(blackjack.workDeck).length - 1);
+		// 		// 		// console.log(stash)
+		// 		// 		//chooses the number
+		// 		// 		var numKey = Object.keys(blackjack.workDeck);
+		// 		// 		// var numKey = blackjack.workDeck[Object.keys(blackjack.workDeck)[stash]];
+		// 		// 		// grab a suit
+		// 		// 		//grab a suit
+		// 		// 		console.log(numKey);
+		// 		// 		blackjack.discard.numKey = numKey[blackjack.randomNumber(0,3)];
+		// 		// 		//put in discard, remove from workdeck
+
+
+		// 		// 		//have discard keys already set with pushing into the new array
+		// 		// 		//I don't want numKey to be a string.  Javascript is set up to have what ever is on left is a string
+		// 		// 	},
+
+
+		// 		// 	randCard: function() {
+						
+		// 		// 	},
+
+		// 		// 	displayCards : function() {
+		// 		// 		for (i in deck) {
+		// 		// 			console.log(i, deck[i])
+		// 		// 		}
+		// 		// 	},
+		// 		}
+
+
+
+var values = ["ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"];
+var suit = ["diamonds", "spades", "hearts", "clubs"];
+var hand = {
+	ace: [],
+	two: [],
+	three: [],
+	four: [],
+	five: [],
+	six: [],
+	seven: [],
+	eight: [],
+	nine: [],
+	ten: [],
+	jack: [],
+	queen: [],
+	king: [],
+};
+var discard = {};
+
+
+function getRandomArbitrary(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+//hand[values[getRandomArbitrary(0, values.length - 1)]] = suit[getRandomArbitrary(0, suit.length-1)];
+
+// hand[values[getRandomArbitrary(0, values.length - 1)]].push(suit[getRandomArbitrary(0, suit.length-1)]);
+for (var i=0; i<51;i++) {
+	var drawVal = values[getRandomArbitrary(0, values.length - 1)];
+	// console.log(drawVal)
+	var drawSuit = suit[getRandomArbitrary(0, suit.length-1)];
+	// console.log(drawSuit)
+	if (hand[drawVal].indexOf(drawSuit) === -1){
+		hand[drawVal].push(drawSuit);
+	}
+	else {}
+}
+
+// console.log(hand)
 
 	// // var key = "happyCount";
 	// // myArray.push( { key : someValueArray } );
