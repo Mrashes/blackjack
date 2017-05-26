@@ -41,6 +41,7 @@
 			var drawSuit = suit[getRandomArbitrary(0, suit.length-1)];
 			if (userHand[drawVal].indexOf(drawSuit) === -1){
 				userHand[drawVal].push(drawSuit);
+				discard[drawVal].push(drawSuit);
 			}
 			else {}
 		}
@@ -49,14 +50,16 @@
 			var drawSuit = suit[getRandomArbitrary(0, suit.length-1)];
 			if (compHand[drawVal].indexOf(drawSuit) === -1){
 				compHand[drawVal].push(drawSuit);
+				discard[drawVal].push(drawSuit);
 			}
 			else {}
 		}
 		//hand[values[getRandomArbitrary(0, values.length - 1)]] = suit[getRandomArbitrary(0, suit.length-1)];
 
 		// hand[values[getRandomArbitrary(0, values.length - 1)]].push(suit[getRandomArbitrary(0, suit.length-1)]);
-		for (var i=0; i<51;i++) {
-
+		for (var i=0; i<52;i++) {
+			compDraw()
+			draw()
 		}
 
 		// console.log(hand)
