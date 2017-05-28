@@ -10,8 +10,55 @@
 <body>
 	<script type="text/javascript">
 	// create deck here
-
+		var values = ["ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"];
+		var userHand = [];
+		var compHand = [];
 	// draw function
+		function getRandomArbitrary(min, max) {
+		  return Math.floor(Math.random() * (max - min)) + min;
+		}
+
+		function draw() {
+			var drawVal = values[getRandomArbitrary(0, values.length - 1)];
+			// var drawSuit = suit[getRandomArbitrary(0, suit.length-1)];
+			if (true){
+				userHand.push(drawVal)
+				// userHand[drawVal].push(drawSuit);
+				// discard[drawVal].push(drawSuit);
+			}
+			else {}
+		}
+
+		function compDraw() {
+			var drawVal = values[getRandomArbitrary(0, values.length - 1)];
+			// var drawSuit = suit[getRandomArbitrary(0, suit.length-1)];
+			if (true){
+				compHand.push(drawVal);
+				// userHand[drawVal].push(drawSuit);
+				// discard[drawVal].push(drawSuit);
+			}
+			else {}
+		}
+
+		function init() {
+			draw();
+			compDraw();
+			draw();
+			compDraw();
+		}
+
+		function compare() {
+			
+		}
+
+	// for (i=0; i<20; i++) {
+	// 	draw()
+	// 	compDraw()
+	// }
+
+	// compare function
+
+
 	</script>
 </body>
 </html>
