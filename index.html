@@ -9,47 +9,90 @@
 </head>
 <body>
 	<script type="text/javascript">
+		//this is for taking words to numbers
+		var Small = {
+			'ace': 1,
+			'two': 2,
+			'three': 3,
+			'four': 4,
+			'five': 5,
+			'six': 6,
+			'seven': 7,
+			'eight': 8,
+			'nine': 9,
+			'ten': 10,
+			'jack': 10,
+			'queen': 10,
+			'king': 10,
+		};
+
+		var a, n, g;
+
+		function text2num(s) {
+			a = s.toString().split(/[\s-]+/);
+			n = 0;
+			g = 0;
+			a.forEach(feach);
+			return n + g;
+		}
+
+		function feach(w) {
+			var x = Small[w];
+			if (x != null) {
+				g = g + x;
+			}
+		}
+
+
 	// create deck here
 		var values = ["ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"];
 		var userHand = [];
 		var compHand = [];
+
+		var userInt = [];
+		var compInt = [];
+
+
 	// draw function
+
 		function getRandomArbitrary(min, max) {
 		  return Math.floor(Math.random() * (max - min)) + min;
 		}
 
-		function draw() {
+		//draws a value.  argument is which hand to draw for.
+		function draw(hand) {
 			var drawVal = values[getRandomArbitrary(0, values.length - 1)];
 			// var drawSuit = suit[getRandomArbitrary(0, suit.length-1)];
 			if (true){
-				userHand.push(drawVal)
+				hand.push(drawVal)
 				// userHand[drawVal].push(drawSuit);
 				// discard[drawVal].push(drawSuit);
 			}
 			else {}
 		}
 
-		function compDraw() {
-			var drawVal = values[getRandomArbitrary(0, values.length - 1)];
-			// var drawSuit = suit[getRandomArbitrary(0, suit.length-1)];
-			if (true){
-				compHand.push(drawVal);
-				// userHand[drawVal].push(drawSuit);
-				// discard[drawVal].push(drawSuit);
-			}
-			else {}
-		}
-
-		function init() {
-			draw();
-			compDraw();
-			draw();
-			compDraw();
-		}
-
+		//compare comp to userHand
 		function compare() {
-			
+			console.log(userHand + compHand)
 		}
+
+		//string to integer
+		function sToI(hand) {
+			for (i=0; i<hand.length; i++) {
+				if (units[hand[i]] != -1){
+				}
+			}
+		}
+
+		//first draw
+		function init() {
+			draw(userHand);
+			draw(userHand);
+			draw(compHand);
+			draw(compHand);
+			compare()
+		}
+
 
 	// for (i=0; i<20; i++) {
 	// 	draw()
