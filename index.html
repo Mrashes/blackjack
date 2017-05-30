@@ -8,6 +8,10 @@
 	<!-- <script src="//code.jquery.com/jquery.js"></script> -->
 </head>
 <body>
+	<button onclick="init()">Start</button>
+	<button onclick="draw(userHand)">Hit</button>
+	<button onclick="stand()">Stand</button>
+	<button onclick="seeHand()">View Cards</button>
 	<script type="text/javascript">
 
 
@@ -36,8 +40,12 @@
 				hand.push(drawVal)
 				// userHand[drawVal].push(drawSuit);
 				// discard[drawVal].push(drawSuit);
+				seeValue()
 			}
 			else {}
+		}
+		function stand(){
+			seeCompValue();
 		}
 
 		//compare comp to userHand
@@ -63,7 +71,22 @@
 			else {
 				return userTotal
 			}
-			
+		}
+
+		function seeCompValue(){
+			var compTotal = 0;
+			for (i=0; i<compHand.length; i++){
+				compTotal += units[values.indexOf(compHand[i])]
+			}
+			if (compTotal > 21){
+				return alert("Bust")
+			}
+			else if (compTotal === 21){
+				return alert("blackjack")
+			}
+			else {
+				return compTotal
+			}
 		}
 
 		function seeComp() {
@@ -76,10 +99,13 @@
 
 		//first draw
 		function init() {
+			userHand = [];
+			compHand = [];
 			draw(userHand);
 			draw(userHand);
 			draw(compHand);
 			draw(compHand);
+			seeHand(userHand);
 		}
 
 
