@@ -44,9 +44,6 @@
 			}
 			else {}
 		}
-		function stand(){
-			seeCompValue();
-		}
 
 		//compare comp to userHand
 		function seeHand() {
@@ -63,12 +60,15 @@
 				userTotal += units[values.indexOf(userHand[i])]
 			}
 			if (userTotal > 21){
+				console.log(userHand);
 				return alert("Bust")
 			}
 			else if (userTotal === 21){
-				return alert("blackjack")
+				console.log(userHand);
+				return alert("Blackjack")
 			}
 			else {
+				console.log("end " + userHand);
 				return userTotal
 			}
 		}
@@ -79,44 +79,43 @@
 				compTotal += units[values.indexOf(compHand[i])]
 			}
 			if (compTotal > 21){
-				return alert("Bust")
+				console.log(compHand);
+				return alert("Dealer Bust");
 			}
 			else if (compTotal === 21){
-				return alert("blackjack")
+				console.log(compHand);
+				return alert("Blackjack");
 			}
-			else {
-				return compTotal
+			else if (seeValue()<compTotal){
+				return alert("Dealer wins");
+			}
+			else{
+				draw(compHand);
+				seeCompValue();
 			}
 		}
 
+		function stand(){
+			seeCompValue();
+		}
+
+		// this shows the user the computer hand without giving away the first card
 		function seeComp() {
 			for (i=1; i<compHand.length; i++){
 				console.log(compHand[i])
 			}
 		}
 
-		
-
 		//first draw
 		function init() {
 			userHand = [];
 			compHand = [];
 			draw(userHand);
-			draw(userHand);
 			draw(compHand);
+			draw(userHand);
 			draw(compHand);
 			seeHand(userHand);
 		}
-
-
-	// for (i=0; i<20; i++) {
-	// 	draw()
-	// 	compDraw()
-	// }
-
-	// compare function
-
-
 	</script>
 </body>
 </html>
