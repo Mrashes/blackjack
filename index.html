@@ -29,6 +29,8 @@
 		var compInt = [];
 
 
+
+
 	// draw function
 
 		function getRandomArbitrary(min, max) {
@@ -38,22 +40,22 @@
 		//draws a value.  argument is which hand to draw for.
 		function draw(hand) {
 			var drawVal = values[getRandomArbitrary(0, values.length - 1)];
+			var drawSuit = suits[getRandomArbitrary(0, suits.length-1)];
 			// var drawSuit = suit[getRandomArbitrary(0, suit.length-1)];
-			if (true){
-				hand.push(drawVal)
-				// userHand[drawVal].push(drawSuit);
-				// discard[drawVal].push(drawSuit);
-				seeValue()
-			}
-			else {}
+			//push card drawn to object
+			objHand[drawVal] = drawSuit;
+			hand.push(drawVal);
+			// userHand[drawVal].push(drawSuit);
+			// discard[drawVal].push(drawSuit);
+			seeValue()
 		}
 
 		//compare comp to userHand
 		function seeHand() {
 			for (i=0; i<userHand.length; i++){
 				console.log(userHand[i]);
-				//takes value (string number) and convert to units (integer value)
-				console.log("value of card  " + units[values.indexOf(userHand[i])])
+				// //takes value (string number) and convert to units (integer value)
+				// console.log("value of card  " + units[values.indexOf(userHand[i])])
 			}
 		}
 		//this is the main game function that allows you to see the value of your cards.  It also finds if your cards have busted or win you blackjack.
@@ -71,7 +73,7 @@
 				return alert("Blackjack")
 			}
 			else {
-				console.log("end " + userHand);
+				console.log("seeValue ran " + userHand);
 				return userTotal
 			}
 		}
