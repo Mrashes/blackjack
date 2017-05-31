@@ -18,6 +18,9 @@
 	// create deck here
 		var values = ["ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"];
 		var units = [1,2,3,4,5,6,7,8,9,10,10,10,10];
+		var suits = ["Diamond", "Heart", "Spade", "Club"]
+
+		var objHand = {};
 
 		var userHand = [];
 		var compHand = [];
@@ -53,7 +56,7 @@
 				console.log("value of card  " + units[values.indexOf(userHand[i])])
 			}
 		}
-
+		//this is the main game function that allows you to see the value of your cards.  It also finds if your cards have busted or win you blackjack.
 		function seeValue(){
 			var userTotal = 0;
 			for (i=0; i<userHand.length; i++){
@@ -73,6 +76,7 @@
 			}
 		}
 
+		//this function is the computers main game function.  It is automated as to allow the game to finish quickly
 		function seeCompValue(){
 			var compTotal = 0;
 			for (i=0; i<compHand.length; i++){
@@ -95,6 +99,7 @@
 			}
 		}
 
+		//function for the stand button to allow the game to function.
 		function stand(){
 			seeCompValue();
 		}
